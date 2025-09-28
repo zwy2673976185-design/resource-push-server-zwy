@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.18.2",
-    "multer": "^2.0.0", // 升级至无漏洞版本
+    "multer": "^2.0.0",
     "cors": "^2.8.5"
   },
-  "scripts": { "start": "node server.js" }
+  "scripts": {
+    "start": "node server.js"
+  }
 }
