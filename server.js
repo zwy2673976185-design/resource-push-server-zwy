@@ -47,7 +47,12 @@ io.on('connection', (socket) => {
   if (latestFileUrl) socket.emit('file-updated', latestFileUrl);
   socket.on('disconnect', () => console.log('接收端断开连接'));
 });
-
+// 新增：返回最新文件的URL
+app.get('/getLatest', (req, res) => {
+  // 假设最新文件存储为“latest-file.html”，需根据实际存储逻辑调整
+  const latestFileUrl = `${req.protocol}://${req.get('host')}/files/latest-file.html`;
+  res.json({ latestFileUrl });
+});
 // 启动服务
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => console.log(`服务运行在 ${PORT}`));
